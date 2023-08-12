@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
-function Test() {
+const SignupForm = () => {
     const [name, setName] = useState('');
     const [userName, setuserName] = useState('');
     const [email, setEmail] = useState('');
@@ -13,7 +15,6 @@ function Test() {
     const [mobileError, setmobileError] = useState('');
     const [termsError, setTermsError] = useState('');
 
-    // ... registration logic
     const handleRegistration = () => {
         // Reset error messages
         setnameError('');
@@ -33,74 +34,88 @@ function Test() {
             setEmailError("email is required");
         }
         if (!mobile) {
-            setmobileError("mobile is required ")
+            setmobileError("mobile number is required ")
         }
-        // ... similarly for other fields
-
-        // Check terms and conditions
+       
         if (!acceptedTerms) {
             setTermsError('Check this box if you want to proceed');
         }
 
-        // If there are any errors, stop registration
+       
         if (nameError || usernameError || emailError || mobileError || termsError) {
             return;
         }
 
         // Save data to localStorage
-        const registrationData = { firstName, lastName, email, password };
+        const registrationData = { name, userName, email, mobile };
         localStorage.setItem('registrationData', JSON.stringify(registrationData));
 
-        // Reset form fields and show success message
+        
         setFirstName('');
         setLastName('');
         setEmail('');
         setPassword('');
         setAcceptedTerms(false);
-        // alert('Registration successful!');
+        // console.log('Registration successful!');
     };
+
+
 
 
     return (
         // JSX for the form will go here
-        <div>
-            <h2>Registration</h2>
+        <div className='form'>
+            <h2 className='registration-page-heading'>Super App</h2>
+            <h4>Create your new account</h4>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
             <input
+            className='input-box'
                 type="text"
                 placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
+            </Form.Group>
 
             <span className="error">{nameError}</span>
             <br />
+            <Form.Group className="mb-3" controlId="formBasicEmail">
             <input
+             className='input-box'
                 type="text"
                 placeholder="Username"
                 value={userName}
                 onChange={(e) => setuserName(e.target.value)}
             />
+             </Form.Group>
             <span className="error">{usernameError}</span>
             <br />
+            <Form.Group className="mb-3" controlId="formBasicEmail">
             <input
                 type="email"
+                className='input-box'
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
+             </Form.Group>
             <span className="error">{emailError}</span>
             <br />
+            <Form.Group className="mb-3" controlId="formBasicEmail">
             <input
                 type="number"
+                className='input-box'
                 placeholder="mobile"
                 value={mobile}
                 onChange={(e) => setmobile(e.target.value)}
             />
+            <br />
             <span className="error">{mobileError}</span>
 
-
-            {/* ... other fields and error spans */}
+            </Form.Group>
+           
             <br />
+            <Form.Group className="mb-3" controlId="formBasicEmail">
             <label>
                 <input
                     type="checkbox"
@@ -109,9 +124,10 @@ function Test() {
                 />
                Share my registration data with Superapp
             </label>
+            </Form.Group>
             <span className="error">{termsError}</span>
             <br />
-            <button onClick={handleRegistration}>Register</button>
+            <button onClick={handleRegistration} className='my-btn'>Sign Up</button>
             <br />
             <div>
                 <p>
@@ -125,4 +141,4 @@ function Test() {
     );
 }
 
-export default Test;
+export default SignupForm;

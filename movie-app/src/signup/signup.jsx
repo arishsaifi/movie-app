@@ -1,8 +1,6 @@
 import React from "react";
 import SignupImage from "./signup-image";
 import SignupForm from "./signup-form";
-import Container from 'react-bootstrap/Container';
-
 
 
 const Signup = () => {
@@ -12,7 +10,7 @@ const Signup = () => {
         display : "flex"
     }
     const left = {
-    //    width:"50%",
+       width:"50%",
         float : "left",
     }
     const right = {
@@ -22,8 +20,8 @@ const Signup = () => {
 
     return (
         <div style={main}>
-        <SignupImage style={left}/>
-        <SignupForm style={right}/>
+       <div> <SignupImage style={left}/></div>
+        <div><SignupForm style={right}/></div>
 
         </div>
        

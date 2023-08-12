@@ -42,10 +42,10 @@ function Test() {
             setTermsError('You must accept the terms and conditions');
         }
 
-        // If there are any errors, stop registration
-        if (nameError || usernameError || emailError || mobileError || termsError) {
-            return;
-        }
+        // // If there are any errors, stop registration
+        // if (nameError || usernameError || emailError || mobileError || termsError) {
+        //     return;
+        // }
 
         // Save data to localStorage
         const registrationData = { firstName, lastName, email, password };
