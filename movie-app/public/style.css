@@ -29,6 +29,7 @@ body {
     border: 1.2px solid black;
     flex-shrink: 0;
     border-radius: 3.816px;
+    color: aliceblue;
     background: #292929
 }
 
@@ -38,4 +39,8 @@ body {
     width: 42vh;
     height: 7vh;
     color: aliceblue;
+}
+.registration-footer{
+    padding-left: 90px;
+    text-align: left;
 }

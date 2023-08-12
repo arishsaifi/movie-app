@@ -129,7 +129,7 @@ const SignupForm = () => {
             <br />
             <button onClick={handleRegistration} className='my-btn'>Sign Up</button>
             <br />
-            <div>
+            <div className='registration-footer'>
                 <p>
                     By clicking on Sign up. you agree to Superapp <a href="" style={{ color: "rgba(114, 219, 115, 1)" }}>Terms and Conditions of Use</a>
                 </p>
