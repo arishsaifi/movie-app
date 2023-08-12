@@ -39,7 +39,7 @@ function Test() {
 
         // Check terms and conditions
         if (!acceptedTerms) {
-            setTermsError('Check this box if you want to proceed');
+            setTermsError('You must accept the terms and conditions');
         }
 
         // If there are any errors, stop registration
@@ -107,7 +107,7 @@ function Test() {
                     checked={acceptedTerms}
                     onChange={() => setAcceptedTerms(!acceptedTerms)}
                 />
-               Share my registration data with Superapp
+                Accept Terms and Conditions
             </label>
             <span className="error">{termsError}</span>
             <br />
