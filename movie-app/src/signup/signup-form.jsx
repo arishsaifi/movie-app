@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const SignupForm = () => {
@@ -46,7 +45,7 @@ const SignupForm = () => {
             return;
         }
 
-        // Save data to localStorage
+        
         const registrationData = { name, userName, email, mobile };
         localStorage.setItem('registrationData', JSON.stringify(registrationData));
 
@@ -56,14 +55,13 @@ const SignupForm = () => {
         setEmail('');
         setPassword('');
         setAcceptedTerms(false);
-        // console.log('Registration successful!');
+        
     };
 
 
 
-
     return (
-        // JSX for the form will go here
+        
         <div className='form'>
             <h2 className='registration-page-heading'>Super App</h2>
             <h4>Create your new account</h4>
